@@ -20,7 +20,7 @@ valid_groups = pd.DataFrame()
 # Initialize the list of column names
 column_names = ['datetime']
 columns = ['Temp', 'Flow', 'SetPt']
-letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G']
+letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
 rows = [0,1,2,3,4,5,6]
 cols = [4, 6, 7]
 # Generate the column names
@@ -34,7 +34,7 @@ for timestamp, group in df_unique.groupby('Timestamp'):
     unit_ids = set(group['UNIT ID'])
     #print(f"\nTimestamp: {timestamp}")  # Debug print
     #print(f"UNIT IDs in group: {unit_ids}")  # Debug print of UNIT IDs in the group
-    if {'A', 'B', 'C', 'D', 'E', 'F', 'G'}.issubset(unit_ids):
+    if {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'}.issubset(unit_ids):
         # Sort the group by 'UNIT ID' before concatenating
         sorted_group = group.sort_values(by='UNIT ID')
         #print(sorted_group)
